@@ -1,0 +1,27 @@
+<h1>Listing test_models</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Age</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @test_models.each do |test_model| %>
+  <tr>
+    <td><%= test_model.name %></td>
+    <td><%= test_model.email %></td>
+    <td><%= test_model.age %></td>
+    <td><%= link_to 'Show', test_model %></td>
+    <td><%= link_to 'Edit', edit_test_model_path(test_model) %></td>
+    <td><%= link_to 'Destroy', test_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Test model', new_test_model_path %>
